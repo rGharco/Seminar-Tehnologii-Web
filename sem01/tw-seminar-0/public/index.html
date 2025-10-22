@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ro">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prima aplicație web</title>
+  <style>
+    body {
+      font-family: system-ui;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    .api-test {
+      margin: 20px 0;
+      padding: 15px;
+      background: #f0f0f0;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      background: #1a5490;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2c5aa0;
+    }
+    #result {
+      margin-top: 15px;
+      padding: 10px;
+      background: white;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎉 Prima aplicație web</h1>
+  
+  <div class="api-test">
+    <h2>Teste API</h2>
+    <button onclick="testPing()">Test /ping</button>
+    <button onclick="testTime()">Test /api/time</button>
+    <div id="result"></div>
+  </div>
+  
+  <script>
+    async function testPing() {
+      const response = await fetch('/ping');
+      const text = await response.text();
+      document.getElementById('result').innerHTML = 
+        `<strong>/ping:</strong> ${text}`;
+    }
+    
+    async function testTime() {
+      const response = await fetch('/api/time');
+      const data = await response.json();
+      document.getElementById('result').innerHTML = 
+        `<strong>/api/time:</strong> ${data.now}`;
+    }
+    
+    // Test automat la încărcare
+    console.log('Aplicație încărcată cu succes!');
+  </script>
+</body>
+</html>

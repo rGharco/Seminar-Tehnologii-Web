@@ -1,0 +1,27 @@
+{
+  "name": "tw-seminar-0",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "npm run test:vitest && npm run test:jest",
+    "test:vitest": "vitest run --reporter verbose",
+    "test:jest": "jest --runInBand",
+    "lint": "eslint .",
+    "format": "prettier -w ."
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.28.3",
+    "@types/jest": "^30.0.0",
+    "babel-jest": "^30.2.0",
+    "eslint": "^9.37.0",
+    "jest": "^30.2.0",
+    "nodemon": "^3.0.0",
+    "prettier": "^3.6.2",
+    "vitest": "^3.2.4"
+  }
+}
