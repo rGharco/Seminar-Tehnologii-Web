@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA</title>
+</head>
+<body>
+    <form action="" id="form" style="margin-bottom: 50px;">
+        <label for="name">NAME:
+            <input type="text" name="" id="name">
+        </label>
+        <label for="phone-number">PHONE:
+            <input type="number" name="" id="phone-number">
+        </label>
+        <input type="submit" name="submit" id="submit-btn">
+    </form>
+    <table>
+        <thead>
+            <tr>NAME</tr>
+            <tr>PHONE</tr>
+        </thead>
+        <tbody id="table-body">
+            
+        </tbody>
+    </table>
+
+    <script>
+        const form = document.getElementById("form");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const name = document.getElementById("name").value;
+            const phoneNumber = document.getElementById("phone-number").value;
+            
+            const tableBody = document.getElementById("table-body");
+            const tr  = document.createElement("tr");
+            tableBody.append(tr);
+
+            const newName = document.createElement("td");
+            newName.textContent = name;
+            const phoneNumberData = document.createElement("td");
+            phoneNumberData.textContent = phoneNumber;
+
+            tr.appendChild(newName);
+            tr.appendChild(phoneNumberData);
+        });
+    </script>
+</body>
+</html>
