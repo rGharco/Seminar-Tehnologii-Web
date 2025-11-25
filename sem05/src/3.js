@@ -11,7 +11,10 @@ app.use(cors());
 app.use("/api", router);
 
 const students = [
-    {id: 1, name: "John", age: 15}
+    {id: 1, name: "John", age: 15},
+    {id: 2, name: "Dan", age: 20},
+    {id: 3, name: "Danel", age: 21},
+    {id: 4, name: "Danut", age: 24}
 ]
 
 router.route("/getList").get((req, res) => {
@@ -19,17 +22,21 @@ router.route("/getList").get((req, res) => {
 })
 
 router.route("/getStudent").get((req, res) => {
-    students.forEach((student) => {
-        if (student.id == req.query.id) {
-            res.json(student);
-        } 
-        else {
-            res.status(404).json({ message: "Student not found" });
-        }
-    });
+    const studentId = req.query["student-id"]; 
 
-    return res;
-})
+    if (!studentId) {
+        return res.status(400).json({ message: "Missing student-id" });
+    }
+
+    const student = students.find(s => s.id == studentId);
+
+    if (student) {
+        return res.json(student); 
+    } else {
+        return res.status(404).json({ message: "Student not found!" }); 
+    }
+});
+
 
 let port = 8000;
 app.listen(port);
