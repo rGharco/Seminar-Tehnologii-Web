@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercitiul 4</title>
+    <style>        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 500px;
+            margin: 0 auto;
+        }
+        
+        .row {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+        }
+       
+        .square {
+            width: calc(100% / 3);
+            height: 150px;
+            background-color: gray;
+            float: left;
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="row">
+            <h1>Tic Tac Toe</h1>
+        </div>
+        <div class="row">
+            <div class="top left square"></div>
+            <div class="top middle square"></div>
+            <div class="top right square"></div>
+        </div>
+        <div class="row">
+            <div class="middle left square"></div>
+            <div class="middle center square"></div>
+            <div class="middle right square"></div>
+        </div>
+        <div class="row">
+            <div class="bottom left square"></div>
+            <div class="bottom middle square"></div>
+            <div class="bottom right square"></div>
+        </div>
+    </div>
+</body>
+</html>

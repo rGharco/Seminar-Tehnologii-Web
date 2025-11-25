@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercitiul 5</title>
+
+    <style>
+        :root {
+            --border-radius: 4px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 700px;
+        }
+
+        form {
+            margin-top: 2em;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        form > * {
+            font-weight: normal;
+        }
+
+        fieldset {
+            border: none;
+            background-color: #dfdfdf;
+            margin-top: 0.6em;
+            padding: 1em;
+            border-radius: var(--border-radius);
+        }
+
+        label {
+            margin-bottom: 0.2em;
+        }
+
+        label, input {
+            display: block;
+        }
+
+        input:not(:last-of-type), select, textarea {
+            width: 100%;
+            border-radius: var(--border-radius);
+            margin-bottom: 1em;
+            padding-left: 0.8em;
+        }
+
+        input, select, input[type="submit"] {
+            height: 35px;
+        }
+
+        textarea {
+            padding-top: 0.4em;
+        }
+
+        input[type="submit"] {
+            cursor: pointer;
+            color: white;
+            background-color:#008000;
+            padding: 0.5em 1.5em;
+            border-radius: var(--border-radius);
+            border: none;
+            box-shadow: 0px 2px 5px 0px rgb(148, 148, 148);
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+         <form action="">Contact Form
+            <fieldset>
+                <label for="first-name">First Name</label>
+                <input type="text" name="" id="" placeholder="Your Name">
+
+                <label for="last-name">Last Name</label>
+                <input type="text" name="" id="" placeholder="Your Last Name">
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+
+                <option value="default">-- Select country --</option>
+                <option value="Romania">Romania</option>
+                <option value="United-States">United States</option>
+                <option value="Germany">Germany</option>
+                <option value="France">France</option>
+                <option value="Japan">Japan</option>
+                <option value="Hungary">Hungary</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea name="subject" id="subject-text" placeholder="Write something..." rows="10"></textarea>
+
+                <input type="submit">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
