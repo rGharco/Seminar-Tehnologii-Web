@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercitiul 3</title>
+
+    <style>
+        .wrapper {
+            margin: 50px auto;
+            width: 700px;
+            height: auto;
+        }
+
+        .chess-table {
+            display: grid;
+            grid-template: repeat(8, 1fr) / repeat(8, 1fr);
+            width: 100%;
+            height: 600px;
+        }
+
+        .white {
+            background-color: gray;
+        }
+
+        .black {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="chess-table">
+        </div>  
+    </div>
+
+    <script>
+        const table = document.querySelector(".chess-table");
+
+        for (let row = 0; row < 8; row++) {
+            for (let col = 0; col < 8; col++) {
+
+                const cell = document.createElement("div");
+                cell.classList.add("cell");
+
+                if ((row + col) % 2 === 0)
+                    cell.classList.add("white");
+                else
+                    cell.classList.add("black");
+
+                table.appendChild(cell);
+            }
+        }
+    </script>
+</body>
+</html>
